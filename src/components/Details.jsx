@@ -2,7 +2,7 @@
 export default function Detail({locationData, getTime}) {
     return (
         <div className="absolute z-[1] bg-white 
-        transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-[35%] xs:top-[32%] sm:top-auto
+        transform -translate-x-1/2 -translate-y-1/2 left-1/2 mt-12 sm:mt-0
         flex flex-col sm:flex-row gap-4 p-5 justify-center items-center sm:items-start 
         rounded-xl font-Rubik w-max max-w-[90%]">
             <div className="flex flex-col text-center sm:text-left">
