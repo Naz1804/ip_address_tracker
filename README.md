@@ -49,4 +49,16 @@ Then you should have the project running !!
 
 # API
 
-The API we are using is ipgeolocation this is the _[Link](https://ipgeolocation.io/documentation/ip-geolocation-api.html)_ to the Documentation.
+The API we are using is ipgeolocation this is the _[Link](https://ipgeolocation.io/documentation/ip-geolocation-api.html)_ to the Documentation. And they have a free plan which you can use, make an account and get your `API KEY` from your dashboard.
+
+On `APP.jsx` find the variable called `API_KEY` and replace the value with your `API KEY` and remember to keep it in quotes.
+
+![image](https://github.com/Naz1804/ip_address_tracker/assets/121124109/e18745db-b38e-4124-ab50-bdaabbc985e2)
+
+```
+const API_KEY = // this is where you put your api key replacing of what was their
+```
+
+We using 2 API fetch to get the location, ISP and the other fetch is to get the exact time from the given IP address. 
+
+If you look at `APP.jsx` you can see how we are using the API and also use the document to know which data you are calling and what other calls and data you can do. 
