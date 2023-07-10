@@ -8,13 +8,14 @@ IP address tracker is a tool that can be used to identify the location, time, an
 * Tailwind CSS
 * HTML
 * API
+* leaflet.js
 
 # Installation
 First thing first is you need `node.js` installed. USe this _[Link](https://nodejs.org/)_ to be sent to the `node.js` downloads.
 
 1. Then you can clone the code locally by copying the `HTTPS` from the `<> Code` button.
 
-![image](https://github.com/Naz1804/url_shortening_shortly/assets/121124109/88d634c1-da23-4311-b5b5-5038c4b12047)
+![image](https://github.com/Naz1804/ip_address_tracker/assets/121124109/1137bc4a-e9e6-4ec1-bc1c-30926e5bd13f)
 
 2. Open a terminal window or open your code editor that you can open up a terminal.
 3. Navigate to the directory where you want to clone the repository.
@@ -23,7 +24,6 @@ First thing first is you need `node.js` installed. USe this _[Link](https://node
 ```sh
 git clone https://github.com/Naz1804/ip_address_tracker.git
 ```
-
 
 To install the dependencies, run the following command in your terminal:
 
@@ -46,3 +46,7 @@ You have two options to either click on the `http://localhost:5173/` or press `o
 You can always press `h` to see what more commands they are.
 
 Then you should have the project running !!
+
+# API
+
+The API we are using is ipgeolocation this is the _[Link](https://ipgeolocation.io/documentation/ip-geolocation-api.html)_ to the Documentation.
