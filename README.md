@@ -61,4 +61,16 @@ const API_KEY = // this is where you put your api key replacing of what was thei
 
 We using 2 API fetch to get the location, ISP and the other fetch is to get the exact time from the given IP address. 
 
-If you look at `APP.jsx` you can see how we are using the API and also use the document to know which data you are calling and what other calls and data you can do. 
+If you look at `APP.jsx` you can see how we are calling the API, how we using the data to get the output we want. 
+
+Also remember to use the document to know which data you are calling and what other calling plus what data you can get. 
+
+# Leaflet.js
+
+Leaflet.js is an open-source JavaScript library for building interactive web maps. It is designed to be lightweight and easy to use, and it supports a wide variety of features, including:
+
+* Tile layers: Leaflet.js can display tiled maps from a variety of sources, including OpenStreetMap, Google Maps, and Bing Maps.
+* Markers: Leaflet.js can display markers on maps, and you can customize the appearance of markers using CSS.
+* Popups: Leaflet.js can display popups on maps, and you can use popups to display information about markers or other features on the map.
+* Polylines: Leaflet.js can display polylines on maps, and you can use polylines to represent features such as roads or trails.
+* Polygons: Leaflet.js can display polygons on maps, and you can use polygons to represent features such as countries or states.
