@@ -50,24 +50,48 @@ function App() {
     });
   }, []);
 
-  function handleSubmit() {
-    let trimmValue = inputValue
-    if (inputValue) {
-      fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=${API_KEY}&ip=${trimmValue}`)
-      .then(response => response.json())
-      .then(data => {
+  function handleSubmit(event) {
+    event.preventDefault();
+    let trimmedValue = inputValue.trim();
+    if (trimmedValue) {
+      const isBogon = /^(10\.|127\.|172\.(16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31)|192\.168\.)/.test(trimmedValue);
+  
+      if (isBogon) {
         setLocationData({
-          ipAddress: data.ip,
-          location: `${data.city}, ${data.country_name}`,
-          isp: data.isp
-        })
-        setPosition([data.latitude, data.longitude])
-      })
-      fetch(`https://api.ipgeolocation.io/timezone?apiKey=${API_KEY}&ip=${trimmValue}`)
-        .then(response => response.json())
-        .then(timeZ => {
-          setGetTime(timeZ.time_24)
-      })
+          ipAddress: trimmedValue,
+          location: 'Private Network',
+          isp: 'Unavailable',
+        });
+        setGetTime('');
+      } else {
+        fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=${API_KEY}&ip=${trimmedValue}`)
+          .then(response => response.json())
+          .then(data => {
+            setLocationData({
+              ipAddress: data.ip,
+              location: `${data.city}, ${data.country_name}`,
+              isp: data.isp,
+            });
+            setPosition([data.latitude, data.longitude]);
+          })
+          .catch((error) => {
+            console.error('Error fetching IP geolocation:', error);
+            setLocationData({
+              ipAddress: 'Invalid IP address or unavailable data',
+              location: '',
+              isp: '',
+            });
+          });
+  
+        fetch(`https://api.ipgeolocation.io/timezone?apiKey=${API_KEY}&ip=${trimmedValue}`)
+          .then(response => response.json())
+          .then(timeZ => {
+            setGetTime(timeZ.time_24);
+          })
+          .catch((error) => {
+            console.error('Error fetching timezone:', error);
+          });
+      }
     }
     setInputValue('')
   }
